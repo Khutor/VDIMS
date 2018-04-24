@@ -8,3 +8,14 @@
 /Users/elliotgolden/Documents/VDIMS/VDIMS/obj/Debug/VDIMS.csproj.CoreCompileInputs.cache
 /Users/elliotgolden/Documents/VDIMS/VDIMS/obj/Debug/VDIMS.dll
 /Users/elliotgolden/Documents/VDIMS/VDIMS/obj/Debug/VDIMS.pdb
+C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\bin\VDIMS.dll
+C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\bin\VDIMS.pdb
+C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.csprojResolveAssemblyReference.cache
+C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.csproj.CoreCompileInputs.cache
+C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.dll
+C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.pdb
+C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\bin\VDIMS.dll.config
+C:\Users\Tyler\source\repos\VDIMS\VDIMS\bin\MySql.Data.dll
+C:\Users\Tyler\source\repos\VDIMS\VDIMS\bin\Google.Protobuf.dll
+C:\Users\Tyler\source\repos\VDIMS\VDIMS\bin\MySql.Data.xml
+C:\Users\Tyler\source\repos\VDIMS\VDIMS\obj\Debug\VDIMS.csproj.CopyComplete

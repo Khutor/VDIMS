@@ -2,14 +2,15 @@
 <asp:Content runat="server" ContentPlaceHolderID="contentMain">
     <form id="registerform" class="form-signin" runat="server">
        <h1 class="h3 mb-3 font-weight-normal">Create an account</h1>
-        <asp:TextBox id="name" class="form-control" runat="server">Name</asp:TextBox>
-        <asp:TextBox id="email" class="form-control" runat="server">Email Address</asp:TextBox>
-        <asp:TextBox id="password" class="form-control" runat="server">Password</asp:TextBox>
-        <asp:TextBox id="phone" class="form-control" runat="server">Phone Number</asp:TextBox>
+        <asp:TextBox id="nameTxt" class="form-control" runat="server" placeholder="Name"></asp:TextBox>
+        <asp:TextBox id="emailTxt" class="form-control" runat="server" placeholder="Email Address"></asp:TextBox>
+        <asp:TextBox id="passwordTxt" class="form-control" runat="server" placeholder="Password"></asp:TextBox>
+        <asp:TextBox id="phoneTxt" class="form-control" runat="server" placeholder="Phone Number"></asp:TextBox>
         <br/>
-        <asp:Button id="loginButton" runat="server" Text="Sign me up"  class="btn btn-lg btn-primary btn-block"/>
+        <asp:Button id="loginButton" runat="server" Text="Sign me up"  class="btn btn-lg btn-primary btn-block" OnClick="loginButton_Click"/>
         <br/>
         <p><a href="/sign_in.aspx">Already have an account?</a></p>
-        
+        <br />
+        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
     </form>
     </asp:Content>

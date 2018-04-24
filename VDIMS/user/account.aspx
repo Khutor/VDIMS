@@ -5,6 +5,7 @@
     <% 
         admin_controls();
     %>
+    <p><a href="/admin/inventory.aspx">Admin Controls</a></p>
     <h3>Favorites</h3>
     <%
         do_fav_table();

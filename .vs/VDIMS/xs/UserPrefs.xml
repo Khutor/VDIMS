@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{55479B9C-8F63-48F8-B1C2-58E6B3415093}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VDIMS/admin/inventory.aspx">
+    <Files>
+      <File FileName="VDIMS/admin/add_vehicle.aspx" Line="76" Column="19" />
+      <File FileName="VDIMS/admin/update_vehicle.aspx" Line="72" Column="51" />
+      <File FileName="VDIMS/user/account.aspx" Line="8" Column="38" />
+      <File FileName="VDIMS/admin/inventory.aspx" Line="4" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.VDIMS PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

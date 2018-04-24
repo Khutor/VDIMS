@@ -42,6 +42,9 @@
     <Content Include="vehicle\results.aspx" />
     <Content Include="vehicle\view.aspx" />
     <Content Include="user\account.aspx" />
+    <Content Include="admin\inventory.aspx" />
+    <Content Include="admin\add_vehicle.aspx" />
+    <Content Include="admin\update_vehicle.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -94,6 +97,24 @@
     </Compile>
     <Compile Include="user\account.aspx.designer.cs">
       <DependentUpon>account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\inventory.aspx.cs">
+      <DependentUpon>inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\inventory.aspx.designer.cs">
+      <DependentUpon>inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\add_vehicle.aspx.cs">
+      <DependentUpon>add_vehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\add_vehicle.aspx.designer.cs">
+      <DependentUpon>add_vehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\update_vehicle.aspx.cs">
+      <DependentUpon>update_vehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\update_vehicle.aspx.designer.cs">
+      <DependentUpon>update_vehicle.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

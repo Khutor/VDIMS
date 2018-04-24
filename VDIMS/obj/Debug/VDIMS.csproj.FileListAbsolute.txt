@@ -1,0 +1,10 @@
+/Users/elliotgolden/Projects/VDIMS/VDIMS/bin/VDIMS.dll
+/Users/elliotgolden/Projects/VDIMS/VDIMS/bin/VDIMS.pdb
+/Users/elliotgolden/Projects/VDIMS/VDIMS/obj/Debug/VDIMS.csproj.CoreCompileInputs.cache
+/Users/elliotgolden/Projects/VDIMS/VDIMS/obj/Debug/VDIMS.dll
+/Users/elliotgolden/Projects/VDIMS/VDIMS/obj/Debug/VDIMS.pdb
+/Users/elliotgolden/Documents/VDIMS/VDIMS/bin/VDIMS.dll
+/Users/elliotgolden/Documents/VDIMS/VDIMS/bin/VDIMS.pdb
+/Users/elliotgolden/Documents/VDIMS/VDIMS/obj/Debug/VDIMS.csproj.CoreCompileInputs.cache
+/Users/elliotgolden/Documents/VDIMS/VDIMS/obj/Debug/VDIMS.dll
+/Users/elliotgolden/Documents/VDIMS/VDIMS/obj/Debug/VDIMS.pdb

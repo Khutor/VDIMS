@@ -1,6 +1,7 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VDIMS", "VDIMS\VDIMS.csproj", "{55479B9C-8F63-48F8-B1C2-58E6B3415093}"
 EndProject
 Global
@@ -13,5 +14,11 @@ Global
 		{55479B9C-8F63-48F8-B1C2-58E6B3415093}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55479B9C-8F63-48F8-B1C2-58E6B3415093}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55479B9C-8F63-48F8-B1C2-58E6B3415093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89F1E567-B794-4193-9CA6-557059781C80}
 	EndGlobalSection
 EndGlobal

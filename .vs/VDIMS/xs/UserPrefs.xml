@@ -1,10 +1,14 @@
 ﻿<Properties StartupConfiguration="{55479B9C-8F63-48F8-B1C2-58E6B3415093}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="VDIMS/admin/inventory.aspx">
+  <MonoDevelop.Ide.Workbench ActiveDocument="VDIMS/register.aspx.cs">
     <Files>
       <File FileName="VDIMS/admin/add_vehicle.aspx" Line="1" Column="1" />
       <File FileName="VDIMS/admin/update_vehicle.aspx" Line="1" Column="1" />
       <File FileName="VDIMS/user/account.aspx" Line="1" Column="1" />
       <File FileName="VDIMS/admin/inventory.aspx" Line="10" Column="15" />
+      <File FileName="VDIMS/master_page.master.cs" Line="1" Column="1" />
+      <File FileName="VDIMS/master_page.master" Line="1" Column="1" />
+      <File FileName="VDIMS/sign_in.aspx.cs" Line="29" Column="16" />
+      <File FileName="VDIMS/register.aspx.cs" Line="4" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

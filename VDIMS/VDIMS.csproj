@@ -44,14 +44,17 @@
     <Reference Include="MySql.Data.Entity.EF6, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySQL.Data.EntityFrameworkCore, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="MySQL.Data.EntityFrameworkCore.Design, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Web, Version=8.0.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Web.Services" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="sign_out.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -98,6 +101,13 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sign_out.aspx.cs">
+      <DependentUpon>sign_out.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sign_out.aspx.designer.cs">
+      <DependentUpon>sign_out.aspx</DependentUpon>
     </Compile>
     <Compile Include="vehicle\search.aspx.cs">
       <DependentUpon>search.aspx</DependentUpon>
@@ -151,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

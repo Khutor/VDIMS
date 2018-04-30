@@ -25,11 +25,17 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/sign_in.aspx">Me</a>
+          <li id="signin" visible="true" runat="server" class="nav-item">
+            <a class="nav-link" href="/sign_in.aspx">Signin</a>
+          </li>
+          <li id="userpage" visible="false" runat="server" class="nav-item">
+            <a class="nav-link" href="/user/account.aspx">Me</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/vehicle/search.aspx">Search</a>
+          </li>
+          <li visible="false" id="signout" runat="server" class="nav-item">
+            <a onClick="signout_Click" class="nav-link" href="/sign_out.aspx">Signout</a>
           </li>
         </ul>
       </div>

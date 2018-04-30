@@ -54,17 +54,17 @@ namespace VDIMS.vehicle
                                             <th scope='col'>Location</th>
                                             <th scope='col'></th>
                                         </tr></thead><tbody>"
-                    while(reader.Read() {
-                    Response.Write(@"<tr>"+ whtaeverthemaketextisthatyougotfromthedb.text "</tr>"
+                    //while(reader.Read() {
+                    //Response.Write(@"<tr>"+ whtaeverthemaketextisthatyougotfromthedb.text "</tr>"
                                         +"<tr></tr>");
-                    }
+                    //}
                    //run a for loop generating
                    //table body andtable rows for
                    //each vehicle returned by the search
                    //with the rightmost column being a view
                    //link to vehicle info page
 
-                   + "</tbody></table>");
+                   //+ "</tbody></table>");
             }
             else
             {

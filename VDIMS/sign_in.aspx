@@ -6,7 +6,7 @@
         <label for="email" class="sr-only"></label>
         <asp:TextBox id="emailTxt" class="form-control" runat="server" placeholder="Email"></asp:TextBox>
         <label for="password" class="sr-only"></label>
-        <asp:TextBox id="passwordTxt" class="form-control" runat="server" placeholder="Password"></asp:TextBox>
+        <asp:TextBox id="passwordTxt" class="form-control" runat="server" textmode="Password" placeholder="Password" ></asp:TextBox>
         <br/>
         <asp:Button id="loginButton" runat="server" Text="Sign in"  class="btn btn-lg btn-primary btn-block" OnClick="loginButton_Click"/>
         <br/>

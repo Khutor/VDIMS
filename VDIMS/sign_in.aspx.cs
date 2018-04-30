@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Web;
-using System.Web.UI;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using System.Web;
+using System.Web.UI;
 using System.Data;
+
 
 namespace VDIMS
 {
@@ -12,7 +13,7 @@ namespace VDIMS
     {
         protected void loginButton_Click(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection("server=SERVER;user id=ID;password=PWORD;persistsecurityinfo=True;database=DB");
+            MySqlConnection conn = new MySqlConnection("ADD ME");
             DataTable dt = new DataTable();
             String email = emailTxt.Text;
             String pword = passwordTxt.Text;
@@ -27,6 +28,7 @@ namespace VDIMS
             {
                 Label1.Text = "Invalid login";
             }
+            conn.Close();
         }
     }
 }

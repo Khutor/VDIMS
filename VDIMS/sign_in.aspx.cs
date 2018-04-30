@@ -22,7 +22,24 @@ namespace VDIMS
             adapter.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                Label1.Text = "Valid login";
+                String name = "";
+                int ID = 0;
+                Boolean isAdmin = false;
+                foreach (DataRow row in dt.Rows)
+                {
+                    ID = Int32.Parse(row["USER_ID"].ToString());
+                    name = row["USER_NAME"].ToString();
+                    if (row["IS_ADMIN"].ToString().Equals("True"))
+                       isAdmin = true;
+                    else
+                        isAdmin = false;
+                }
+
+                Session["Logged"] = "Yes";
+                Session["USER_NAME"] = name;
+                Session["USER_ID"] = ID;
+                Session["IS_ADMIN"] = isAdmin;
+                Response.Redirect("~/Default.aspx");
             }
             else
             {

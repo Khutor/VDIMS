@@ -263,3 +263,4 @@ paket-files/
 __pycache__/
 *.pyc
 .vs/VDIMS/xs/UserPrefs.xml
+/VDIMS/images/missing.png

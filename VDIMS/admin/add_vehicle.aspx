@@ -9,21 +9,21 @@
                     <div>
                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="Make" class="form-control" placeholder="Make" runat="server" ></asp:TextBox>
+                            <asp:TextBox id="Make" class="form-control" required="true" placeholder="Make" runat="server" ></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Model" class="form-control" runat="server" placeholder="Model"></asp:TextBox>
+                            <asp:TextBox id="Model" class="form-control" required="true" runat="server" placeholder="Model"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Year" class="form-control" runat="server" placeholder="Year"></asp:TextBox>
+                            <asp:TextBox id="Year" class="form-control" required="true" runat="server" placeholder="Year"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="ExtColor" class="form-control" runat="server" placeholder="Exterior Color"></asp:TextBox>
+                            <asp:TextBox id="ExtColor" class="form-control" require="true" runat="server" placeholder="Exterior Color"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="IntColor" class="form-control" runat="server" placeholder="Interior Color"></asp:TextBox>
+                            <asp:TextBox id="IntColor" class="form-control" required="true" runat="server" placeholder="Interior Color"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
@@ -34,21 +34,21 @@
                             </asp:DropDownList>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Mileage" class="form-control" runat="server" placeholder="Mileage"></asp:TextBox>
+                            <asp:TextBox id="Mileage" class="form-control" required="true" runat="server" placeholder="Mileage"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="CityMpg" class="form-control" runat="server" placeholder="City MPG"></asp:TextBox>
+                            <asp:TextBox id="CityMpg" class="form-control" required="true" runat="server" placeholder="City MPG"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="HighwayMpg" class="form-control" runat="server" placeholder="Highway MPG"></asp:TextBox>
+                            <asp:TextBox id="HighwayMpg" class="form-control" required="true" runat="server" placeholder="Highway MPG"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="Engine" class="form-control" runat="server" placeholder="Engine"></asp:TextBox>
+                            <asp:TextBox id="Engine" class="form-control" required="true" runat="server" placeholder="Engine"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Transmission" class="form-control" runat="server" placeholder="Transmission"></asp:TextBox>
+                            <asp:TextBox id="Transmission" class="form-control" required="true" runat="server" placeholder="Transmission"></asp:TextBox>
                         </div>
                         <div class="form-group col">
                             <asp:DropDownList id="Location" class="form-control" runat="server" placeholder="Location">
@@ -60,11 +60,11 @@
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="Price" class="form-control" runat="server" placeholder="Price"></asp:TextBox>
+                            <asp:TextBox id="Price" class="form-control" required="true" runat="server" placeholder="Price"></asp:TextBox>
 
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Vin" class="form-control" runat="server" placeholder="VIN Number"></asp:TextBox>
+                            <asp:TextBox id="Vin" class="form-control" required="true" runat="server" placeholder="VIN Number"></asp:TextBox>
                         </div>
 
                     </div>
@@ -73,7 +73,6 @@
                             <h3>File Image Upload</h3>
                             <br /><br />
                             <asp:FileUpload id="uploader" runat="server"/>
-                            <!--File uploader feature not supported on back end-->
                             <br /><br />
                         </div>
                     </div>

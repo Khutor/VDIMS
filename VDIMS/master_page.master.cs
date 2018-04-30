@@ -5,5 +5,6 @@ namespace VDIMS
 {
     public partial class master_page : System.Web.UI.MasterPage
     {
+
     }
 }

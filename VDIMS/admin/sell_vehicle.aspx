@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master_page.master" CodeFile="delete_vehicle.aspx.cs" Inherits="VDIMS.admin.delete_vehicle" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master_page.master" CodeFile="sell_vehicle.aspx.cs" Inherits="VDIMS.admin.sell_vehicle" %>
 
 
 <asp:Content runat="server" ContentPlaceHolderID="contentMain">
-    <h1>Delete Vehicles</h1>
+    <h1>Mark Vehicle as Sold</h1>
             <div class="container">
-                <form id="searchform" runat="server">
+                <form id="sellForm" runat="server">
                     <div>
                      <div class="row">
                         <div class="form-group col">
@@ -73,7 +73,7 @@
 
                     </div>
                     <div class="row">
-                            <asp:Button id="deleteButton" runat="server" readonly="true" Text="Delete Vehicle" onClick="deleteButton_Click" class="btn btn-lg btn-primary btn-block"/>
+                            <asp:Button id="soldButton" runat="server" readonly="true" Text="Mark as Sold" onClick="soldButton_Click" class="btn btn-lg btn-primary btn-block"/>
                         <br />
                         </div>
                     </div>
@@ -83,4 +83,4 @@
 
                 </form>
             </div>
-    </asp:Content>
+</asp:Content>

@@ -14,8 +14,6 @@
         
         <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         
-        <br />
-<%--        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString1 %>" ProviderName="<%$ ConnectionStrings:ConnectionString1.ProviderName %>"></asp:SqlDataSource>--%>
-    
+        <br />    
     </form>
 </asp:Content>

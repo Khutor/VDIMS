@@ -2,7 +2,7 @@
 
 
 <asp:Content runat="server" ContentPlaceHolderID="contentMain">
-    <h1>Add a vehicle</h1>
+    <h1>Add Vehicle</h1>
     <p>All fields are required</p>
             <div class="container">
                 <form id="searchform" runat="server">
@@ -34,13 +34,13 @@
                             </asp:DropDownList>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Mileage" class="form-control" required="true" runat="server" placeholder="Mileage"></asp:TextBox>
+                            <asp:TextBox id="Mileage" class="form-control" required="true" type="number" runat="server" placeholder="Mileage"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="CityMpg" class="form-control" required="true" runat="server" placeholder="City MPG"></asp:TextBox>
+                            <asp:TextBox id="CityMpg" class="form-control" required="true" type="number" runat="server" placeholder="City MPG"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="HighwayMpg" class="form-control" required="true" runat="server" placeholder="Highway MPG"></asp:TextBox>
+                            <asp:TextBox id="HighwayMpg" class="form-control" required="true" type="number" runat="server" placeholder="Highway MPG"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="Price" class="form-control" required="true" runat="server" placeholder="Price"></asp:TextBox>
+                            <asp:TextBox id="Price" class="form-control" required="true" type="number" runat="server" placeholder="Price"></asp:TextBox>
 
                         </div>
                         <div class="form-group col">
@@ -78,9 +78,12 @@
                     </div>
                     <div class="row">
                             <asp:Button id="addButton" runat="server" Text="Add Vehicle"  class="btn btn-lg btn-primary btn-block" OnClick="addButton_Click"/>
+                            
                         </div>
                     </div>
-                    
+                    <asp:Label ID="msgTxt" runat="server" Text=""></asp:Label><br />
+                    <asp:Button id="backBtn" runat="server" Text="Back to Inventory" UseSubmitBehavior="false" class="btn btn-lg btn-primary btn-block" CausesValidation="false" OnClick="backBtn_Click"/>
+
                 </form>
             </div>
 </asp:Content>

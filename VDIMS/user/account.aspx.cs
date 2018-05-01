@@ -11,32 +11,40 @@ namespace VDIMS.user
 
     public partial class account : System.Web.UI.Page
     {
-
+        private String cString = "ADD ME";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("false"))
+            try
             {
-                nameTxt.Text = Session["USER_NAME"].ToString();
-                emailTxt.Text = Session["USER_EMAIL"].ToString();
-                String sql = "SELECT IMN FROM FAVORITES WHERE USER_ID = " + Session["USER_ID"].ToString();
-                String cString = "ADD ME";
-                using (MySqlConnection conn = new MySqlConnection(cString))
+                if (Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("false"))
                 {
-                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                    nameTxt.Text = Session["USER_NAME"].ToString();
+                    emailTxt.Text = Session["USER_EMAIL"].ToString();
+                    String sql = "SELECT IMN FROM FAVORITES WHERE USER_ID = " + Session["USER_ID"].ToString();
+                    using (MySqlConnection conn = new MySqlConnection(cString))
                     {
-                        conn.Open();
-                        MySqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                        DataTable dt = new DataTable();
-                        dt.Load(dr);
-                        favorites.DataSource = dt;
-                        favorites.DataBind();
-                        conn.Close();
+                        using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                        {
+                            conn.Open();
+                            MySqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                            DataTable dt = new DataTable();
+                            dt.Load(dr);
+                            favorites.DataSource = dt;
+                            favorites.DataBind();
+                            conn.Close();
+                        }
                     }
                 }
-            } else
+                else
+                {
+                    Response.Redirect("~/sign_in.aspx");
+                }
+            } catch(MySqlException ex)
             {
-                Response.Redirect("~/sign_in.aspx");
+                msgTxt.ForeColor = System.Drawing.Color.Red;
+                msgTxt.Text = "An error has occurred loading favorites; refer to the following error message: " + "<br />" + ex.ToString();
             }
+
         }
         public override void VerifyRenderingInServerForm(Control control)
         {

@@ -2,7 +2,7 @@
 
 
 <asp:Content runat="server" ContentPlaceHolderID="contentMain">
-    <h1>Update vehicle</h1>
+    <h1>Update Vehicle</h1>
     <p>All fields are required</p>
             <div class="container">
                 <form id="searchform" runat="server">
@@ -78,8 +78,8 @@
                         <br />
                         </div>
                     </div>
-                    <asp:Label ID="msgTxt" runat="server" Text=""></asp:Label>
-
+                    <asp:Label ID="msgTxt" runat="server" Text=""></asp:Label><br />
+                    <asp:Button id="backBtn" runat="server" Text="Back to Inventory" UseSubmitBehavior="false" class="btn btn-lg btn-primary btn-block" CausesValidation="false" OnClick="backBtn_Click"/>
                 </form>
             </div>
     </asp:Content>

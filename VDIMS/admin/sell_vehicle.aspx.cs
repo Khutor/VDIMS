@@ -10,16 +10,15 @@ using MySql.Data.MySqlClient;
 namespace VDIMS.admin
 {
 
-    public partial class delete_vehicle : System.Web.UI.Page
+    public partial class sell_vehicle : System.Web.UI.Page
     {
         private String cString = "ADD ME";
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (!IsPostBack)
             {
-                if (!IsPostBack)
+                try
                 {
-
                     MySqlConnection conn = new MySqlConnection(cString);
                     DataSet ds = new DataSet();
                     var sql = "SELECT IMN FROM VEHICLE";
@@ -32,15 +31,12 @@ namespace VDIMS.admin
                     IMNdrop.DataBind();
                     conn.Close();
                     IMNdrop.Items.Insert(0, new ListItem("Select IMN", "0"));
+                } catch(MySqlException ex)
+                {
+                    msgTxt.ForeColor = System.Drawing.Color.Red;
+                    msgTxt.Text = "An error has occurred:" + "<br />" + ex.ToString();
                 }
-            } catch(MySqlException ex)
-            {
-                msgTxt.ForeColor = System.Drawing.Color.Red;
-                msgTxt.Text = "An error has occurred:" + "<br />" + ex.ToString();
             }
-          
-
-
         }
 
         protected void IMNdrop_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,11 +81,11 @@ namespace VDIMS.admin
                 cmd.Dispose();
             } catch(MySqlException)
             {
-                Response.Redirect("delete_vehicle.aspx");
+                Response.Redirect("sell_vehicle.aspx");
             }
         }
 
-        protected void deleteButton_Click(object sender, EventArgs e)
+        protected void soldButton_Click(object sender, EventArgs e)
         {
             try
             {
@@ -97,26 +93,31 @@ namespace VDIMS.admin
                 conn.Open();
                 MySqlCommand comm = conn.CreateCommand();
                 MySqlCommand comm2 = conn.CreateCommand();
+                MySqlCommand comm3 = conn.CreateCommand();
                 String imn = IMNdrop.SelectedValue;
                 var sql2 = "DELETE FROM FAVORITES WHERE IMN = " + imn;
+                var sql3 = "INSERT INTO SOLD_VEHICLES SELECT v.* FROM VEHICLE v WHERE IMN = " + imn;
                 var sql = "DELETE FROM VEHICLE WHERE IMN = " + imn;
                 comm.CommandText = sql;
                 comm2.CommandText = sql2;
+                comm3.CommandText = sql3;
                 comm2.ExecuteNonQuery();
+                comm3.ExecuteNonQuery();
                 comm.ExecuteNonQuery();
                 conn.Close();
                 msgTxt.ForeColor = System.Drawing.Color.Empty;
-                msgTxt.Text = "Vehicle successfully deleted from the database";
+                msgTxt.Text = "Vehicle successfully marked as sold";
             } catch(MySqlException ex)
             {
                 msgTxt.ForeColor = System.Drawing.Color.Red;
-                msgTxt.Text = "Vehicle could not be deleted; refer to the below error message:" + "<br />" + ex.ToString();
+                msgTxt.Text = "Vehicle could not be marked as sold; refer to the below error message:" + "<br />" + ex.ToString();
             }
         }
 
         protected void backBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("/admin/inventory.aspx");
+
         }
     }
 }

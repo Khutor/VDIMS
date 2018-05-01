@@ -10,7 +10,7 @@ using System.Data;
 namespace VDIMS.admin
 {
 
-    public partial class inventory : System.Web.UI.Page
+    public partial class sold_inventory : System.Web.UI.Page
     {
         private String cString = "ADD ME";
         protected void page_load(object sender, EventArgs e)
@@ -21,7 +21,7 @@ namespace VDIMS.admin
                 {
                     using (MySqlConnection con = new MySqlConnection(cString))
                     {
-                        using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM VEHICLE"))
+                        using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM SOLD_VEHICLES"))
                         {
                             using (MySqlDataAdapter da = new MySqlDataAdapter())
                             {
@@ -39,7 +39,7 @@ namespace VDIMS.admin
                 } catch(MySqlException ex)
                 {
                     msgTxt.ForeColor = System.Drawing.Color.Red;
-                    msgTxt.Text = "Inventory could not be displayed; refer to below error message:" + "<br />" + ex.ToString();
+                    msgTxt.Text = "Sold Inventory could not be displayed; refer to below error message:" + "<br />" + ex.ToString();
                 }
             }
         }

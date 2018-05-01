@@ -6,10 +6,8 @@
         <p class="lead">
             <asp:Label ID="welcome" runat="server" Text="Welcome Administrator"></asp:Label>
         </p>
-        <p class="lead">Click <a href="/admin/add_vehicle.aspx">here</a> to add vehicles</p>
-        <p class="lead">Click <a href="/admin/update_vehicle.aspx">here</a> to update vehicles</p>
-        <p class="lead">Click <a href="/admin/delete_vehicle.aspx">here</a> to delete vehicles</p>
         <p class="lead">Click <a href="/admin/inventory.aspx">here</a> to view vehicle inventory</p>
+        <p class="lead">Click <a href="/admin/sold_inventory.aspx">here</a> to view sold vehicle inventory</p>
     </asp:Panel>
 
 </asp:Content>

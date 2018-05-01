@@ -56,6 +56,8 @@
   <ItemGroup>
     <Content Include="admin\backend.aspx" />
     <Content Include="admin\delete_vehicle.aspx" />
+    <Content Include="admin\sell_vehicle.aspx" />
+    <Content Include="admin\sold_inventory.aspx" />
     <Content Include="Global.asax" />
     <Content Include="sign_out.aspx" />
     <Content Include="Web.config">
@@ -87,6 +89,20 @@
     </Compile>
     <Compile Include="admin\delete_vehicle.aspx.designer.cs">
       <DependentUpon>delete_vehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\sell_vehicle.aspx.cs">
+      <DependentUpon>sell_vehicle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sell_vehicle.aspx.designer.cs">
+      <DependentUpon>sell_vehicle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\sold_inventory.aspx.cs">
+      <DependentUpon>sold_inventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\sold_inventory.aspx.designer.cs">
+      <DependentUpon>sold_inventory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

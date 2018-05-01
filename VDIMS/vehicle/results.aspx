@@ -1,36 +1,17 @@
 ﻿<%@ Page Language="C#" CodeFile="results.aspx.cs" MasterPageFile="/master_page.master" Inherits="VDIMS.vehicle.results" %>
 <asp:Content runat="server" ContentPlaceHolderID="contentMain">
     <h1>Search Results</h1>
-    <asp:Repeater ID="Repeater1" runat="server">
-    <HeaderTemplate>
-        <table cellspacing="0" rules="all" border="1">
-            <tr>
-                <th scope="col" style="width: 80px">
-                    IMN
-                </th>
-                <th scope="col" style="width: 120px">
-                    Make
-                </th>
-                <th scope="col" style="width: 100px">
-                    Model
-                </th>
-            </tr>
-    </HeaderTemplate>
-    <ItemTemplate>
-        <tr>
-            <td>
-                <asp:HyperLink ID="lblIMN" runat=server NavigateUrl='<%# DataBinder.Eval(Container.DataItem, "IMN", "view.aspx?IMN={0}") %>'> <%# DataBinder.Eval(Container.DataItem, "IMN") %>' </asp:HyperLink>
-            </td>
-            <td>
-                <asp:Label ID="lblMake" runat="server" Text='<%# Eval("MAKE") %>' />
-            </td>
-            <td>
-                <asp:Label ID="lblModel" runat="server" Text='<%# Eval("MODEL") %>' />
-            </td>
-        </tr>
-    </ItemTemplate>
-    <FooterTemplate>
-        </table>
-    </FooterTemplate>
-</asp:Repeater>
+    <asp:GridView ID="gvSearch" runat="server" AllowPaging="True" CssClass= "table table-striped table-bordered table-condensed" AutoGenerateColumns="False">
+        <Columns>
+            <asp:HyperLinkField DataTextField="IMN" DataNavigateUrlFields="IMN" DataNavigateUrlFormatString="/vehicle/view.aspx?IMN={0}" HeaderText="IMN" Text="IMN" />
+            <asp:BoundField DataField="Make" HeaderText="Make" />
+            <asp:BoundField DataField="Model" HeaderText="Model" />
+            <asp:BoundField DataField="Price" HeaderText="Price" />
+        </Columns>
+    </asp:GridView>
+    <form id="backForm" runat="server">
+        <asp:Button ID="backToSearch" Text="Back to Search" class="btn btn-lg btn-primary btn-block" CausesValidation="false" runat="server" OnClick="backToSearch_Click" /> <br />
+        <asp:Label ID="msgTxt" runat="server" Text=""></asp:Label>
+    </form>
+
 </asp:Content>

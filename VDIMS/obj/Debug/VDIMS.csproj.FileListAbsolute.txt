@@ -6,8 +6,8 @@ C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.csproj.CoreCompileInputs
 C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.csproj.CopyComplete
 C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.dll
 C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.pdb
-C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\obj\Debug\VDIMS.csprojResolveAssemblyReference.cache
 C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\bin\MySql.Data.dll
 C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\bin\MySql.Web.dll
 C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\bin\MySql.Data.xml
 C:\Users\Tyler\Source\Repos\VDIMS\VDIMS\bin\MySql.Web.xml
+C:\Users\Tyler\source\repos\VDIMS\VDIMS\obj\Debug\VDIMS.csprojResolveAssemblyReference.cache

@@ -1,16 +1,13 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/master_page.master" CodeFile="inventory.aspx.cs" Inherits="VDIMS.admin.inventory" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/master_page.master" CodeFile="sold_inventory.aspx.cs" Inherits="VDIMS.admin.sold_inventory" %>
 <asp:Content runat="server" ContentPlaceHolderID="contentMain">
-    <h1>Current Inventory</h1>
-    <p><a class="left" href="add_vehicle.aspx">Add a vehicle</a></p>
+    <h1>Sold Vehicle Inventory</h1>
+    <p><a class="left" href="sell_vehicle.aspx">Mark a vehicle as sold</a></p>
     <div style="min-width: 2000px; max-width: 2000px;">
-                    <asp:GridView style="margin-right:615px;" CssClass="table table-striped table-bordered table-condensed" ID="VehicleGridView" AllowSorting="True" AllowPaging ="True" 
+                    <asp:GridView style="margin-right:700px;" CssClass="table table-striped table-bordered table-condensed" ID="VehicleGridView" AllowSorting="True" AllowPaging ="True" 
                         runat="server" DataKeyNames="IMN"
-                        AutoGenerateColumns="False" Width="670px" SelectedIndex="0"
+                        AutoGenerateColumns="False" Width="670px" SelectedIndex="0" 
                         horizontalalign="Right">
                         <Columns>
-                            <asp:hyperlinkfield headertext="Sell" Text="Sell" NavigateUrl="~/admin/sell_vehicle.aspx" />
-                            <asp:hyperlinkfield headertext="Update" Text="Update" NavigateUrl="~/admin/update_vehicle.aspx" />
-                            <asp:hyperlinkfield headertext="Delete" Text="Delete" NavigateUrl="~/admin/delete_vehicle.aspx" />
                             <asp:BoundField DataField="IMN" HeaderText="IMN" ReadOnly="true"/>
                             <asp:BoundField DataField="VIN" HeaderText="VIN" ReadOnly="true" />
                             <asp:BoundField DataField="MAKE" HeaderText="Make" ReadOnly="true"/>

@@ -2,22 +2,15 @@
 <asp:Content runat="server" ContentPlaceHolderID="contentMain">
     <h1>Current Inventory</h1>
     <p><a class="left" href="add_vehicle.aspx">Add a vehicle</a></p>
-   <table style="margin: 0 auto; width: 600px;">
-            
-            <%--vehicle inventory display--%>
-            <tr>
-                <td>
-                    <asp:GridView ID="VehicleGridView" AllowSorting="True" AllowPaging ="True" 
-                        runat="server" DataSourceID="SqlDataSource" DataKeyNames="IMN" 
-                        AutoGenerateColumns="False" Width="700px" SelectedIndex="0" 
-                        OnSelectedIndexChanged="VehicleGridView_SelectedIndexChanged" 
+    <div style="min-width: 2000px; max-width: 2000px;">
+                    <asp:GridView style="margin-right:670px;" CssClass="table table-striped table-bordered table-condensed" ID="VehicleGridView" AllowSorting="True" AllowPaging ="True" 
+                        runat="server" DataKeyNames="IMN"
+                        AutoGenerateColumns="False" Width="670px" SelectedIndex="0" 
                         OnPageIndexChanged="VehicleGridView_PageIndexChanged" 
-                        OnRowDeleted="VehicleGridView_RowDeleted" 
-                        OnSorted ="VehicleGridView_Sorted" BackColor="White"
-                        BorderColor="#000000" BorderStyle="Groove" BorderWidth="2px" CellPadding="5"
-                        ForeColor="#000000" HeaderStyle-Font-Names="Calisto MT">
+                        horizontalalign="Right"
+                        OnSorted ="VehicleGridView_Sorted">
                         <Columns>
-                            <asp:CommandField ShowSelectButton="true" ShowDeleteButton="true" />
+                            <asp:CommandField ShowDeleteButton="true" />
                             <asp:BoundField DataField="IMN" HeaderText="IMN" ReadOnly="true" SortExpression="IMN"/>
                             <asp:BoundField DataField="VIN" HeaderText="VIN" ReadOnly="true" />
                             <asp:BoundField DataField="MAKE" HeaderText="Make" ReadOnly="true"/>
@@ -34,19 +27,8 @@
                             <asp:BoundField DataField="PRICE" HeaderText="Price" ReadOnly="true"/>
                             <asp:BoundField DataField="VEHICLE_ENGINE" HeaderText="Engine" ReadOnly="true"/>
                         </Columns>
-                        <FooterStyle BackColor="#fff" />
-                        <HeaderStyle BackColor="#fff" Font-Bold="true" ForeColor="#000" />
-                        <PagerStyle BackColor="#fff" ForeColor="Black" HorizontalAlign="Right" />
-                        <RowStyle BackColor="#fff" />
-                        <SelectedRowStyle BackColor="#fff" Font-Bold="True" ForeColor="#000" />
-                        <SortedAscendingCellStyle BackColor="#fff" />
-                        <SortedAscendingHeaderStyle BackColor="#fff" />
-                        <SortedDescendingCellStyle BackColor="#fff" />
-                        <SortedDescendingHeaderStyle BackColor="#fff" />
                     </asp:GridView>
-                    
-                </td>
-            </tr>
-        </table>
-</asp:Content>
+    </div>
+    <br />
+    <a class="btn btn-primary" href="/admin/backend.aspx" role="button">Back to Backend Home</a>
 </asp:Content>

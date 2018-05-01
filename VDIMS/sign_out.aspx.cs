@@ -15,6 +15,7 @@ namespace VDIMS
             Session["Logged"] = "No";
             Session["USER_NAME"] = "";
             Session["USER_ID"] = "";
+            Session["USER_EMAIL"] = "";
             Session["IS_ADMIN"] = "false";
         }
 

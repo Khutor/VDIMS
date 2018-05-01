@@ -1,39 +1,47 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
+using System.Data;
+using MySql;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace VDIMS.user
 {
 
     public partial class account : System.Web.UI.Page
     {
-        public void admin_controls()
+
+        protected void Page_Load(object sender, EventArgs e)
         {
-            //create link to admin controls if admin but for now
-            Response.Write("<p><a href='#'>Admin Controls</a></p>");
+            if (Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("false"))
+            {
+                nameTxt.Text = Session["USER_NAME"].ToString();
+                emailTxt.Text = Session["USER_EMAIL"].ToString();
+                String sql = "SELECT IMN FROM FAVORITES WHERE USER_ID = " + Session["USER_ID"].ToString();
+                String cString = "ADD ME";
+                using (MySqlConnection conn = new MySqlConnection(cString))
+                {
+                    using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+                    {
+                        conn.Open();
+                        MySqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                        DataTable dt = new DataTable();
+                        dt.Load(dr);
+                        favorites.DataSource = dt;
+                        favorites.DataBind();
+                        conn.Close();
+                    }
+                }
+            } else
+            {
+                Response.Redirect("~/sign_in.aspx");
+            }
         }
-        public void do_fav_table()
+        public override void VerifyRenderingInServerForm(Control control)
         {
-
-            Response.Write(@"<p>Below this is where a table will go to show results IF and only if => 1 result is found</p>
-            <table class='table'><thead><tr>
-                                    <th scope='col'>IMN</th>
-                                        <th scope='col'>Condition</th>
-                                        <th scope='col'>Make</th>
-                                        <th scope='col'>Model</th>
-                                        <th scope='col'>Year</th>
-                                        <th scope='col'>Color</th>
-                                        <th scope='col'>Price</th>
-                                        <th scope='col'>Location</th>
-                                        <th scope='col'></th>
-                                    </tr></thead>"
-                           //run a for loop generating
-                           //table body andtable rows for
-                           //each vehicle returned by the search
-                           //with the rightmost column being a view
-                           //link to vehicle info page
-
-                           + "</table>");
+            /* Confirms that an HtmlForm control is rendered for the specified ASP.NET
+               server control at run time. */
         }
     }
 }

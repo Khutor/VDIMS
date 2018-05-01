@@ -7,23 +7,28 @@
             <div class="container">
                 <form id="searchform" runat="server">
                     <div>
-                    <div class="row">
+                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="make" class="form-control" placeholder="Make" runat="server" ></asp:TextBox>
-                        </div>
-                        <div class="form-group col">
-                            <asp:TextBox id="model" class="form-control" runat="server" placeholder="Model"></asp:TextBox>
-                        </div>
-                        <div class="form-group col">
-                            <asp:TextBox id="year" class="form-control" runat="server" placeholder="Year"></asp:TextBox>
+                            <asp:DropDownList autopostback="true" class="form-control" ID="IMNdrop" runat="server" OnSelectedIndexChanged="IMNdrop_SelectedIndexChanged"></asp:DropDownList>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="extColor" class="form-control" runat="server" placeholder="Exterior Color"></asp:TextBox>
+                            <asp:TextBox id="make" class="form-control" required="true" placeholder="Make" runat="server" ></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="intColor" class="form-control" runat="server" placeholder="Interior Color"></asp:TextBox>
+                            <asp:TextBox id="model" class="form-control" runat="server" required="true" placeholder="Model"></asp:TextBox>
+                        </div>
+                        <div class="form-group col">
+                            <asp:TextBox id="year" class="form-control" runat="server" required="true" placeholder="Year"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <asp:TextBox id="extColor" class="form-control" runat="server" required="true" placeholder="Exterior Color"></asp:TextBox>
+                        </div>
+                        <div class="form-group col">
+                            <asp:TextBox id="intColor" class="form-control" runat="server" required="true" placeholder="Interior Color"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
@@ -34,21 +39,21 @@
                             </asp:DropDownList>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Mileage" class="form-control" runat="server" placeholder="Mileage"></asp:TextBox>
+                            <asp:TextBox id="Mileage" class="form-control" runat="server" required="true" placeholder="Mileage"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="cMpg" class="form-control" runat="server" placeholder="City MPG"></asp:TextBox>
+                            <asp:TextBox id="cMpg" class="form-control" runat="server" required="true" placeholder="City MPG"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="hMpg" class="form-control" runat="server" placeholder="Highway MPG"></asp:TextBox>
+                            <asp:TextBox id="hMpg" class="form-control" runat="server" required="true" placeholder="Highway MPG"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="engine" class="form-control" runat="server" placeholder="Engine"></asp:TextBox>
+                            <asp:TextBox id="engine" class="form-control" runat="server" required="true" placeholder="Engine"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="transmission" class="form-control" runat="server" placeholder="Transmission"></asp:TextBox>
+                            <asp:TextBox id="transmission" class="form-control" runat="server" required="true" placeholder="Transmission"></asp:TextBox>
                         </div>
                         <div class="form-group col">
                             <asp:DropDownList id="location" class="form-control" runat="server" placeholder="Location">
@@ -69,9 +74,12 @@
 
                     </div>
                     <div class="row">
-                            <asp:Button id="updateButton" runat="server" Text="Update Vehicle"  class="btn btn-lg btn-primary btn-block"/>
+                            <asp:Button id="updateButton" runat="server" Text="Update Vehicle"  class="btn btn-lg btn-primary btn-block" OnClick="updateButton_Click"/>
+                        <br />
                         </div>
                     </div>
+                    <asp:Label ID="msgTxt" runat="server" Text=""></asp:Label>
+
                 </form>
             </div>
     </asp:Content>

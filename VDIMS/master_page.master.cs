@@ -7,11 +7,15 @@ namespace VDIMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Logged"].Equals("Yes"))
+            if (Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("false"))
             {
                 signout.Visible = true;
                 signin.Visible = false;
                 userpage.Visible = true;
+            } else if(Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("true")) {
+                signout.Visible = true;
+                signin.Visible = false;
+                userpage.Visible = false;
             }
             else
             {

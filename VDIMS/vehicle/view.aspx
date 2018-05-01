@@ -13,9 +13,8 @@
     <br /><br />
     <form runat="server">
         <asp:Label ID="msgTxt" runat="server" Text=""></asp:Label>
-        <asp:Button ID="favorite" class="btn btn-lg btn-primary btn-block" runat="server" Text="Add to favorites" OnClick="favorite_Click" />
+        <asp:Button ID="favorite" class="btn btn-lg btn-primary btn-block" runat="server" Text="Add to favorites" OnClick="favorite_Click" /><br />
+        <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" runat="server" Text="Back to Results" OnClick="Button1_Click" />
     </form>
-    <br />
-    <asp:Button ID="Button1" class="btn btn-lg btn-primary btn-block" runat="server" Text="Back to Results" OnClick="Button1_Click" />
         
 </asp:Content>

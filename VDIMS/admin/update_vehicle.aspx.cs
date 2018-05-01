@@ -17,7 +17,7 @@ namespace VDIMS.admin
             if(!IsPostBack)
             {
 
-                MySqlConnection conn = new MySqlConnection("ADD ME");
+                MySqlConnection conn = new MySqlConnection("server=undcsmysql.mysql.database.azure.com;user id=tyler.w.clark@undcsmysql;password=Tyler5566;persistsecurityinfo=True;database=tyler_w_clark");
                 DataSet ds = new DataSet();
                 var sql = "SELECT IMN FROM VEHICLE";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);

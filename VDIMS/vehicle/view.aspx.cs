@@ -65,7 +65,7 @@ namespace VDIMS.vehicle
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("~/vehicle/results.aspx?all");
         }
 
         protected void favorite_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@
         </p>
         <p class="lead">Click <a href="/admin/add_vehicle.aspx">here</a> to add vehicles</p>
         <p class="lead">Click <a href="/admin/update_vehicle.aspx">here</a> to update vehicles</p>
+        <p class="lead">Click <a href="/admin/delete_vehicle.aspx">here</a> to delete vehicles</p>
         <p class="lead">Click <a href="/admin/inventory.aspx">here</a> to view vehicle inventory</p>
     </asp:Panel>
 

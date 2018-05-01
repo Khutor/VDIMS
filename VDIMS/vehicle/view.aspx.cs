@@ -67,5 +67,21 @@ namespace VDIMS.vehicle
         {
 
         }
+
+        protected void favorite_Click(object sender, EventArgs e)
+        {
+            String IMN = Request.QueryString["IMN"];
+            String ID = Session["USER_ID"].ToString();
+            MySqlConnection conn = new MySqlConnection("ADD ME");
+            conn.Open();
+            MySqlCommand comm = conn.CreateCommand();
+            var sql = "INSERT INTO FAVORITES VALUES(@ID, @IMN)";
+            comm.CommandText = sql;
+            comm.Parameters.AddWithValue("@ID", ID);
+            comm.Parameters.AddWithValue("@IMN", IMN);
+            comm.ExecuteNonQuery();
+            conn.Close();
+            msgTxt.Text = "Added to favorites successfully";
+        }
     }
 }

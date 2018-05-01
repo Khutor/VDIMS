@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using MySql.Data;
 using System.Configuration;
 using MySql.Data.MySqlClient;
@@ -15,7 +16,7 @@ namespace VDIMS.admin
         {
             if (!this.IsPostBack)
             {
-                string constr = ConfigurationManager.ConnectionStrings["default"].ConnectionString;
+                string constr = "ADD ME";
                 using (MySqlConnection con = new MySqlConnection(constr))
                 {
                     using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM Vehicle"))
@@ -35,6 +36,8 @@ namespace VDIMS.admin
                 }
             }
         }
+
+
         protected void VehicleGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             VehicleGridView.DataBind();
@@ -43,13 +46,24 @@ namespace VDIMS.admin
         {
             VehicleGridView.DataBind();
         }
-        protected void VehicleGridView_RowDeleted(object sender, EventArgs e)
+        protected void VehicleGridView_RowDeleted(object sender, EventArgs e) 
         {
             VehicleGridView.DataBind();
         }
         protected void VehicleGridView_Sorted(object sender, EventArgs e)
         {
             VehicleGridView.DataBind();
+        }
+
+        public override void VerifyRenderingInServerForm(Control control)
+        {
+            /* Confirms that an HtmlForm control is rendered for the specified ASP.NET
+               server control at run time. */
+        }
+
+        protected void back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/admin/backend.aspx");
         }
     }
 }

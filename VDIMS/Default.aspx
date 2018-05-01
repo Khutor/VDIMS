@@ -12,4 +12,12 @@
         </p>
         <p class="lead"><a href="/vehicle/search.aspx">Search</a> for vehicles</p>
     </asp:Panel>
+
+    <asp:Panel visible="false" ID="Panel3" runat="server">
+        <p class="lead">
+            <asp:Label ID="welcome" runat="server" Text="Welcome Administrator"></asp:Label>
+        </p>
+        <p class="lead"><a href="/vehicle/search.aspx">Search</a> for vehicles, or enter <a href="/admin/backend.aspx">backend.</a></p>
+    </asp:Panel>
+
 </asp:Content>

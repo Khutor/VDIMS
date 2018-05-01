@@ -24,19 +24,22 @@ namespace VDIMS
             {
                 String name = "";
                 int ID = 0;
-                Boolean isAdmin = false;
+                String isAdmin = "false";
+                String admin = "";
                 foreach (DataRow row in dt.Rows)
                 {
                     ID = Int32.Parse(row["USER_ID"].ToString());
                     name = row["USER_NAME"].ToString();
-                    if (row["IS_ADMIN"].ToString().Equals("True"))
-                       isAdmin = true;
+                    admin = row["IS_ADMIN"].ToString();
+                    if (admin.Equals("True"))
+                        isAdmin = "true";
                     else
-                        isAdmin = false;
+                        isAdmin = "false";
                 }
 
                 Session["Logged"] = "Yes";
                 Session["USER_NAME"] = name;
+                Session["USER_EMAIL"] = email;
                 Session["USER_ID"] = ID;
                 Session["IS_ADMIN"] = isAdmin;
                 Response.Redirect("~/Default.aspx");

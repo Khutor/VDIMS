@@ -20,6 +20,7 @@ namespace VDIMS
             //The second Session "User" stores the name of the current user
             Session["USER_NAME"] = "";
             Session["USER_ID"] = "";
+            Session["USER_EMAIL"] = "";
             Session["IS_ADMIN"] = "false";
             //The third Session "URL" stores the URL of the requested WebForm before Logging In
             Session["URL"] = "Default.aspx";

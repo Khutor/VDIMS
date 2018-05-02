@@ -20,7 +20,7 @@
                             <asp:TextBox id="model" class="form-control" runat="server" required="true" placeholder="Model"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="year" class="form-control" runat="server" required="true" placeholder="Year"></asp:TextBox>
+                            <asp:TextBox id="year" class="form-control" runat="server" type="number" required="true" placeholder="Year"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
@@ -39,13 +39,13 @@
                             </asp:DropDownList>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Mileage" class="form-control" runat="server" required="true" placeholder="Mileage"></asp:TextBox>
+                            <asp:TextBox id="Mileage" class="form-control" runat="server" type="number" required="true" placeholder="Mileage"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="cMpg" class="form-control" runat="server" required="true" placeholder="City MPG"></asp:TextBox>
+                            <asp:TextBox id="cMpg" class="form-control" runat="server" type="number" required="true" placeholder="City MPG"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="hMpg" class="form-control" runat="server" required="true" placeholder="Highway MPG"></asp:TextBox>
+                            <asp:TextBox id="hMpg" class="form-control" runat="server" type="number" required="true" placeholder="Highway MPG"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
@@ -65,16 +65,17 @@
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <asp:TextBox id="price" class="form-control" runat="server" placeholder="Price"></asp:TextBox>
-
+                            <asp:TextBox id="price" class="form-control" runat="server" type="number" placeholder="Price"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="vin" class="form-control" runat="server" placeholder="VIN Number"></asp:TextBox>
+                            <asp:TextBox id="vin" class="form-control" runat="server" type="number" placeholder="VIN Number"></asp:TextBox>
                         </div>
-
+                        <div class="form-group col">
+                            <asp:TextBox id="img" class="form-control" runat="server" required="true" placeholder="Image.jpg"></asp:TextBox>
+                        </div>
                     </div>
                     <div class="row">
-                            <asp:Button id="updateButton" runat="server" Text="Update Vehicle"  class="btn btn-lg btn-primary btn-block" OnClick="updateButton_Click"/>
+                            <asp:Button id="updateButton" OnClientClick="return confirm('Update this vehicle?');" runat="server" Text="Update Vehicle"  class="btn btn-lg btn-primary btn-block" OnClick="updateButton_Click"/>
                         <br />
                         </div>
                     </div>

@@ -15,7 +15,7 @@
                             <asp:TextBox id="Model" class="form-control" required="true" runat="server" placeholder="Model"></asp:TextBox>
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Year" class="form-control" required="true" runat="server" placeholder="Year"></asp:TextBox>
+                            <asp:TextBox id="Year" class="form-control" required="true" type="number" runat="server" placeholder="Year"></asp:TextBox>
                         </div>
                     </div>
                     <div class="row">
@@ -64,7 +64,7 @@
 
                         </div>
                         <div class="form-group col">
-                            <asp:TextBox id="Vin" class="form-control" required="true" runat="server" placeholder="VIN Number"></asp:TextBox>
+                            <asp:TextBox id="Vin" class="form-control" required="true" type="number" runat="server" placeholder="VIN Number"></asp:TextBox>
                         </div>
 
                     </div>
@@ -72,12 +72,12 @@
                         <div class="form-group col">
                             <h3>File Image Upload</h3>
                             <br /><br />
-                            <asp:FileUpload id="uploader" runat="server"/>
+                            <asp:FileUpload id="uploader" accept=".png,.jpg,.jpeg,.gif"  runat="server"/>
                             <br /><br />
                         </div>
                     </div>
                     <div class="row">
-                            <asp:Button id="addButton" runat="server" Text="Add Vehicle"  class="btn btn-lg btn-primary btn-block" OnClick="addButton_Click"/>
+                            <asp:Button id="addButton" OnClientClick="return confirm('Add this vehicle?');" runat="server" Text="Add Vehicle"  class="btn btn-lg btn-primary btn-block" OnClick="addButton_Click"/>
                             
                         </div>
                     </div>

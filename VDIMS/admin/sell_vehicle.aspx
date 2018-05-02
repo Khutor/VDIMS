@@ -73,7 +73,7 @@
 
                     </div>
                     <div class="row">
-                            <asp:Button id="soldButton" runat="server" readonly="true" Text="Mark as Sold" onClick="soldButton_Click" class="btn btn-lg btn-primary btn-block"/>
+                            <asp:Button id="soldButton" OnClientClick="return confirm('Mark vehicle as sold?');" runat="server" readonly="true" Text="Mark as Sold" onClick="soldButton_Click" class="btn btn-lg btn-primary btn-block"/>
                         <br />
                         </div>
                     </div>

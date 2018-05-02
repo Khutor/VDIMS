@@ -73,7 +73,7 @@
 
                     </div>
                     <div class="row">
-                            <asp:Button id="deleteButton" runat="server" readonly="true" Text="Delete Vehicle" onClick="deleteButton_Click" class="btn btn-lg btn-primary btn-block"/>
+                            <asp:Button id="deleteButton" OnClientClick="return confirm('Delete this vehicle?');" runat="server" readonly="true" Text="Delete Vehicle" onClick="deleteButton_Click" class="btn btn-lg btn-primary btn-block"/>
                         <br />
                         </div>
                     </div>

@@ -15,33 +15,41 @@ namespace VDIMS.admin
         private String cString = "ADD ME";
         protected void page_load(object sender, EventArgs e)
         {
-            if (!this.IsPostBack)
+            if (Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("true"))
             {
-                try
+                if (!this.IsPostBack)
                 {
-                    using (MySqlConnection con = new MySqlConnection(cString))
+                    try
                     {
-                        using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM SOLD_VEHICLES"))
+                        using (MySqlConnection con = new MySqlConnection(cString))
                         {
-                            using (MySqlDataAdapter da = new MySqlDataAdapter())
+                            using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM SOLD_VEHICLES"))
                             {
-                                cmd.Connection = con;
-                                da.SelectCommand = cmd;
-                                using (DataTable dt = new DataTable())
+                                using (MySqlDataAdapter da = new MySqlDataAdapter())
                                 {
-                                    da.Fill(dt);
-                                    VehicleGridView.DataSource = dt;
-                                    VehicleGridView.DataBind();
+                                    cmd.Connection = con;
+                                    da.SelectCommand = cmd;
+                                    using (DataTable dt = new DataTable())
+                                    {
+                                        da.Fill(dt);
+                                        VehicleGridView.DataSource = dt;
+                                        VehicleGridView.DataBind();
+                                    }
                                 }
                             }
                         }
                     }
-                } catch(MySqlException ex)
-                {
-                    msgTxt.ForeColor = System.Drawing.Color.Red;
-                    msgTxt.Text = "Sold Inventory could not be displayed; refer to below error message:" + "<br />" + ex.ToString();
+                    catch (MySqlException ex)
+                    {
+                        msgTxt.ForeColor = System.Drawing.Color.Red;
+                        msgTxt.Text = "Sold Inventory could not be displayed; refer to below error message:" + "<br />" + ex.ToString();
+                    }
                 }
             }
+            else
+            {
+                Response.Redirect("~/sign_in.aspx");
+            }          
         }
 
         public override void VerifyRenderingInServerForm(Control control)

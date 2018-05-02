@@ -15,28 +15,36 @@ namespace VDIMS.admin
         private String cString = "ADD ME";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("true"))
             {
-                try
+                if (!IsPostBack)
                 {
-                    MySqlConnection conn = new MySqlConnection(cString);
-                    DataSet ds = new DataSet();
-                    var sql = "SELECT IMN FROM VEHICLE";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
-                        da.Fill(ds, "VEHICLE");
-                    IMNdrop.DataSource = ds.Tables["VEHICLE"];
-                    IMNdrop.DataValueField = "IMN";
-                    IMNdrop.DataTextField = "IMN";
-                    IMNdrop.DataBind();
-                    conn.Close();
-                    IMNdrop.Items.Insert(0, new ListItem("Select IMN", "0"));
-                } catch(MySqlException ex)
-                {
-                    msgTxt.ForeColor = System.Drawing.Color.Red;
-                    msgTxt.Text = "An error has occurred:" + "<br />" + ex.ToString();
+                    try
+                    {
+                        MySqlConnection conn = new MySqlConnection(cString);
+                        DataSet ds = new DataSet();
+                        var sql = "SELECT IMN FROM VEHICLE ORDER BY IMN";
+                        MySqlCommand cmd = new MySqlCommand(sql, conn);
+                        using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                            da.Fill(ds, "VEHICLE");
+                        IMNdrop.DataSource = ds.Tables["VEHICLE"];
+                        IMNdrop.DataValueField = "IMN";
+                        IMNdrop.DataTextField = "IMN";
+                        IMNdrop.DataBind();
+                        conn.Close();
+                        IMNdrop.Items.Insert(0, new ListItem("Select IMN", "0"));
+                    }
+                    catch (MySqlException ex)
+                    {
+                        msgTxt.ForeColor = System.Drawing.Color.Red;
+                        msgTxt.Text = "An error has occurred:" + "<br />" + ex.ToString();
+                    }
                 }
             }
+            else
+            {
+                Response.Redirect("~/sign_in.aspx");
+            }         
         }
 
         protected void IMNdrop_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,6 +73,7 @@ namespace VDIMS.admin
                     price.Text = reader["PRICE"].ToString();
                     vin.Text = reader["VIN"].ToString();
                     String cond = reader["VEHICLE_CONDITION"].ToString();
+                    img.Text = reader["IMAGE"].ToString();
                     foreach (ListItem i in condition.Items)
                     {
                         if (i.Value == cond)
@@ -94,6 +103,7 @@ namespace VDIMS.admin
                 MySqlCommand comm = conn.CreateCommand();
                 String imn = IMNdrop.SelectedValue;
                 String make1 = make.Text;
+                String img1 = img.Text;
                 String model1 = model.Text;
                 String year1 = year.Text;
                 String extColor1 = extColor.Text;
@@ -107,7 +117,7 @@ namespace VDIMS.admin
                 int location1 = int.Parse(location.SelectedValue);
                 int price1 = int.Parse(price.Text);
                 String vin1 = vin.Text;
-                var sql = "UPDATE VEHICLE SET VIN = @vin1, MAKE = @make1, MODEL = @model1, VEHICLE_YEAR = @year1, MILEAGE = @mileage1, EXTERIOR_COLOR = @extColor1, INTERIOR_COLOR = @intColor1, TRANSMISSION = @transmission1, VEHICLE_CONDITION = @condition1, DEALERSHIP_ID = @location1, HIGHWAY_MPG = @hMpg1, CITY_MPG = @cMpg1, PRICE = @price1, VEHICLE_ENGINE = @engine1 WHERE IMN = " + imn;
+                var sql = "UPDATE VEHICLE SET VIN = @vin1, MAKE = @make1, MODEL = @model1, VEHICLE_YEAR = @year1, MILEAGE = @mileage1, EXTERIOR_COLOR = @extColor1, INTERIOR_COLOR = @intColor1, TRANSMISSION = @transmission1, VEHICLE_CONDITION = @condition1, DEALERSHIP_ID = @location1, HIGHWAY_MPG = @hMpg1, CITY_MPG = @cMpg1, PRICE = @price1, VEHICLE_ENGINE = @engine1, IMAGE = @img1 WHERE IMN = " + imn;
                 comm.CommandText = sql;
                 comm.Parameters.AddWithValue("@vin1", vin1);
                 comm.Parameters.AddWithValue("@make1", make1);
@@ -123,6 +133,7 @@ namespace VDIMS.admin
                 comm.Parameters.AddWithValue("@cMpg1", cMpg1);
                 comm.Parameters.AddWithValue("@price1", price1);
                 comm.Parameters.AddWithValue("@engine1", engine1);
+                comm.Parameters.AddWithValue("@img1", img1);
                 comm.ExecuteNonQuery();
                 conn.Close();
                 msgTxt.ForeColor = System.Drawing.Color.Empty;

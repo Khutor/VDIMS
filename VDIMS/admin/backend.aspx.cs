@@ -17,8 +17,7 @@ namespace VDIMS.admin
             } else
             {
                 Response.Redirect("~/sign_in.aspx");
-            }
-            
+            }          
         }
     }
 }

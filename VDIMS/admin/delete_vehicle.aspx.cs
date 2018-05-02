@@ -15,32 +15,37 @@ namespace VDIMS.admin
         private String cString = "ADD ME";
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
+            if (Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("true"))
             {
-                if (!IsPostBack)
+                try
                 {
+                    if (!IsPostBack)
+                    {
 
-                    MySqlConnection conn = new MySqlConnection(cString);
-                    DataSet ds = new DataSet();
-                    var sql = "SELECT IMN FROM VEHICLE";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
-                        da.Fill(ds, "VEHICLE");
-                    IMNdrop.DataSource = ds.Tables["VEHICLE"];
-                    IMNdrop.DataValueField = "IMN";
-                    IMNdrop.DataTextField = "IMN";
-                    IMNdrop.DataBind();
-                    conn.Close();
-                    IMNdrop.Items.Insert(0, new ListItem("Select IMN", "0"));
+                        MySqlConnection conn = new MySqlConnection(cString);
+                        DataSet ds = new DataSet();
+                        var sql = "SELECT IMN FROM VEHICLE ORDER BY IMN";
+                        MySqlCommand cmd = new MySqlCommand(sql, conn);
+                        using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+                            da.Fill(ds, "VEHICLE");
+                        IMNdrop.DataSource = ds.Tables["VEHICLE"];
+                        IMNdrop.DataValueField = "IMN";
+                        IMNdrop.DataTextField = "IMN";
+                        IMNdrop.DataBind();
+                        conn.Close();
+                        IMNdrop.Items.Insert(0, new ListItem("Select IMN", "0"));
+                    }
                 }
-            } catch(MySqlException ex)
-            {
-                msgTxt.ForeColor = System.Drawing.Color.Red;
-                msgTxt.Text = "An error has occurred:" + "<br />" + ex.ToString();
+                catch (MySqlException ex)
+                {
+                    msgTxt.ForeColor = System.Drawing.Color.Red;
+                    msgTxt.Text = "An error has occurred:" + "<br />" + ex.ToString();
+                }
             }
-          
-
-
+            else
+            {
+                Response.Redirect("~/sign_in.aspx");
+            }
         }
 
         protected void IMNdrop_SelectedIndexChanged(object sender, EventArgs e)

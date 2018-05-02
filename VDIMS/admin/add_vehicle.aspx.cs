@@ -13,6 +13,18 @@ namespace VDIMS.admin
     public partial class add_vehicle : System.Web.UI.Page
     {
         private String cString = "ADD ME";
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (Session["Logged"].Equals("Yes") && Session["IS_ADMIN"].Equals("true"))
+            {
+
+            }
+            else
+            {
+                Response.Redirect("~/sign_in.aspx");
+            }
+        }
+
         protected void addButton_Click(object sender, EventArgs e)
         {
             try

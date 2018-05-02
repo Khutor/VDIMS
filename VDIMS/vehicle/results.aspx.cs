@@ -80,7 +80,7 @@ namespace VDIMS.vehicle
                 if (Request.Url.AbsoluteUri.Contains("all"))
                     sql = "SELECT IMN, MAKE, MODEL, PRICE FROM VEHICLE";
                 else
-                    sql = "SELECT IMN, MAKE, MODEL WHERE MAKE LIKE '" + make + "' AND MODEL LIKE '" + model + "' AND YEAR = " + year + " AND EXTERIOR_COLOR LIKE '" + color + "' AND PRICE > " + minPrice + " AND PRICE < " + maxPrice + " AND CONDITION = '" + condition + "' AND DEALERSHIP_ID = " + location;
+                    sql = "SELECT IMN, MAKE, MODEL WHERE MAKE LIKE '" + make + "' AND MODEL LIKE '" + model + "' AND VEHICLE_YEAR = " + year + " AND EXTERIOR_COLOR LIKE '" + color + "' AND PRICE > " + minPrice + " AND PRICE < " + maxPrice + " AND VEHICLE_CONDITION = '" + condition + "' AND DEALERSHIP_ID = " + location;
 
                 using (MySqlConnection con = new MySqlConnection(cString))
                 {

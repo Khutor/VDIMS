@@ -121,7 +121,7 @@ namespace VDIMS.admin
 
         protected void backBtn_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/admin/user_list.aspx");
+            Response.Redirect("/admin/inventory.aspx");
         }
     }
 }

@@ -6,10 +6,10 @@
     <asp:Label ID="nameTxt" runat="server"  Text="Name" Font-Size="Larger"></asp:Label><br />
     <asp:Label ID="emailTxt" runat="server" Font-Size="Larger" Text="Email"></asp:Label><br />
     <h2>Favorite Vehicles</h2>
-    <asp:GridView ID="favorites" DataKeyNames="IMN" autogeneratecolumns="false" OnRowCommand="favorites_RowCommand" CssClass= "table table-striped table-bordered table-condensed" runat="server"> 
+    <asp:GridView ID="favorites" ShowHeaderWhenEmpty="true" DataKeyNames="IMN" autogeneratecolumns="false" OnRowCommand="favorites_RowCommand" CssClass= "table table-striped table-bordered table-condensed" runat="server"> 
         <Columns>
            <%--  <asp:CommandField HeaderText="Remove Favorite" DeleteText="Remove" ShowDeleteButton="true"/> --%>
-            <asp:BoundField DataField="IMN" HeaderText="Inventory #" ReadOnly="true"/>
+            <asp:HyperLinkField DataTextField="IMN" DataNavigateUrlFields="IMN" DataNavigateUrlFormatString="/vehicle/view.aspx?IMN={0}&frmAcnt=true" HeaderText="Inventory #" Text="IMN" />
         </Columns> 
     </asp:GridView>
 </asp:Content>

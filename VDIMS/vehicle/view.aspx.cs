@@ -18,6 +18,14 @@ namespace VDIMS.vehicle
             {
                 if (Session["Logged"].Equals("Yes"))
                 {
+                    String currentUrl = Request.Url.AbsoluteUri;
+                    if (currentUrl.Contains("frmAcnt=true"))
+                    {
+                        Button1.Text = "Back to Account";
+                        favorite.Visible = false;
+                        
+                    }
+
                     String IMN = Request.QueryString["IMN"];
                     String sql3 = "SELECT IMAGE FROM VEHICLE WHERE IMN = " + IMN;
                     String img = "";
@@ -131,7 +139,10 @@ namespace VDIMS.vehicle
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/vehicle/results.aspx?all");
+            if (Button1.Text.Equals("Back to Account"))
+                Response.Redirect("~/user/account.aspx");
+            else
+                Response.Redirect("~/vehicle/results.aspx?all");
         }
 
         protected void favorite_Click(object sender, EventArgs e)

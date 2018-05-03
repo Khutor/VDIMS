@@ -3,9 +3,9 @@
     <h1>Current Inventory</h1>
     <p><a class="left" href="add_vehicle.aspx">Add a vehicle</a></p>
     <div style="min-width: 2000px; max-width: 2000px;">
-        <asp:GridView style="margin-right:615px;" CssClass="table table-striped table-bordered table-condensed" ID="VehicleGridView" AllowSorting="True" AllowPaging ="True" 
+        <asp:GridView style="margin-right:615px;" EnableViewState="true" CssClass="table table-striped table-bordered table-condensed" ID="VehicleGridView"
             runat="server" DataKeyNames="IMN"
-            AutoGenerateColumns="False" Width="670px" SelectedIndex="0"
+            AutoGenerateColumns="False" Width="670px"
             horizontalalign="Right">
             <Columns>
                 <asp:hyperlinkfield headertext="Sell" Text="Sell" NavigateUrl="~/admin/sell_vehicle.aspx" />

@@ -29,6 +29,7 @@ namespace VDIMS.admin
         {
             try
             {
+                
                 MySqlConnection conn = new MySqlConnection(cString);
                 conn.Open();
                 MySqlCommand comm = conn.CreateCommand();
@@ -38,13 +39,13 @@ namespace VDIMS.admin
                 String extColor = ExtColor.Text;
                 String intColor = IntColor.Text;
                 String condition = Condition.SelectedValue;
-                int mileage = int.Parse(Mileage.Text);
-                int cMpg = int.Parse(CityMpg.Text);
-                int hMpg = int.Parse(HighwayMpg.Text);
+                int mileage = Math.Abs(int.Parse(Mileage.Text));
+                int cMpg = Math.Abs(int.Parse(CityMpg.Text));
+                int hMpg = Math.Abs(int.Parse(HighwayMpg.Text));
                 String engine = Engine.Text;
                 String transmission = Transmission.Text;
                 int location = int.Parse(Location.SelectedValue);
-                int price = int.Parse(Price.Text);
+                int price = Math.Abs(int.Parse(Price.Text));
                 string vin = Vin.Text;
                 String fileName;
                 if (uploader.HasFile)

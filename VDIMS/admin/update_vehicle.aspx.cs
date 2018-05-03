@@ -109,13 +109,13 @@ namespace VDIMS.admin
                 String extColor1 = extColor.Text;
                 String intColor1 = intColor.Text;
                 String condition1 = condition.SelectedValue;
-                int mileage1 = int.Parse(Mileage.Text);
-                int cMpg1 = int.Parse(cMpg.Text);
-                int hMpg1 = int.Parse(hMpg.Text);
+                int mileage1 = Math.Abs(int.Parse(Mileage.Text));
+                int cMpg1 = Math.Abs(int.Parse(cMpg.Text));
+                int hMpg1 = Math.Abs(int.Parse(hMpg.Text));
                 String engine1 = engine.Text;
                 String transmission1 = transmission.Text;
                 int location1 = int.Parse(location.SelectedValue);
-                int price1 = int.Parse(price.Text);
+                int price1 = Math.Abs(int.Parse(price.Text));
                 String vin1 = vin.Text;
                 var sql = "UPDATE VEHICLE SET VIN = @vin1, MAKE = @make1, MODEL = @model1, VEHICLE_YEAR = @year1, MILEAGE = @mileage1, EXTERIOR_COLOR = @extColor1, INTERIOR_COLOR = @intColor1, TRANSMISSION = @transmission1, VEHICLE_CONDITION = @condition1, DEALERSHIP_ID = @location1, HIGHWAY_MPG = @hMpg1, CITY_MPG = @cMpg1, PRICE = @price1, VEHICLE_ENGINE = @engine1, IMAGE = @img1 WHERE IMN = " + imn;
                 comm.CommandText = sql;

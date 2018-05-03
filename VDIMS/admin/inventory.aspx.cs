@@ -21,23 +21,7 @@ namespace VDIMS.admin
                 {
                     try
                     {
-                        using (MySqlConnection con = new MySqlConnection(cString))
-                        {
-                            using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM VEHICLE"))
-                            {
-                                using (MySqlDataAdapter da = new MySqlDataAdapter())
-                                {
-                                    cmd.Connection = con;
-                                    da.SelectCommand = cmd;
-                                    using (DataTable dt = new DataTable())
-                                    {
-                                        da.Fill(dt);
-                                        VehicleGridView.DataSource = dt;
-                                        VehicleGridView.DataBind();
-                                    }
-                                }
-                            }
-                        }
+                        Bind();
                     }
                     catch (MySqlException ex)
                     {
@@ -56,6 +40,27 @@ namespace VDIMS.admin
         {
             /* Confirms that an HtmlForm control is rendered for the specified ASP.NET
                server control at run time. */
+        }
+
+        protected void Bind()
+        {
+            using (MySqlConnection con = new MySqlConnection(cString))
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM VEHICLE"))
+                {
+                    using (MySqlDataAdapter da = new MySqlDataAdapter())
+                    {
+                        cmd.Connection = con;
+                        da.SelectCommand = cmd;
+                        using (DataTable dt = new DataTable())
+                        {
+                            da.Fill(dt);
+                            VehicleGridView.DataSource = dt;
+                            VehicleGridView.DataBind();
+                        }
+                    }
+                }
+            }
         }
 
         protected void back_Click(object sender, EventArgs e)

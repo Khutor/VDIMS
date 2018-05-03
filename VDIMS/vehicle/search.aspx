@@ -39,8 +39,8 @@
                 <div class="form-group col">
                     <asp:DropDownList id="location" class="form-control" runat="server">
                         <asp:ListItem Value="0" Text="Any Location"></asp:ListItem>
-                        <asp:ListItem Value="1" Text="Grand Forks"></asp:ListItem>
-                        <asp:ListItem Value="2" Text="Fargo"></asp:ListItem>
+                        <asp:ListItem Value="1" Text="Fargo"></asp:ListItem>
+                        <asp:ListItem Value="2" Text="Grand Forks"></asp:ListItem>
                         <asp:ListItem Value="3" Text="Minot"></asp:ListItem>
                     </asp:DropDownList>
                 </div>

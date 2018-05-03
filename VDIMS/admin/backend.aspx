@@ -6,6 +6,7 @@
         <p class="lead">
             <asp:Label ID="welcome" runat="server" Text="Welcome Administrator"></asp:Label>
         </p>
+        <p class="lead">Click <a href="/admin/user_list.aspx">here</a> to view users</p>
         <p class="lead">Click <a href="/admin/inventory.aspx">here</a> to view vehicle inventory</p>
         <p class="lead">Click <a href="/admin/sold_inventory.aspx">here</a> to view sold vehicle inventory</p>
     </asp:Panel>

@@ -55,9 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\backend.aspx" />
+    <Content Include="admin\delete_user.aspx" />
     <Content Include="admin\delete_vehicle.aspx" />
     <Content Include="admin\sell_vehicle.aspx" />
     <Content Include="admin\sold_inventory.aspx" />
+    <Content Include="admin\update_user.aspx" />
+    <Content Include="admin\user_list.aspx" />
     <Content Include="Global.asax" />
     <Content Include="sign_out.aspx" />
     <Content Include="Web.config">
@@ -83,6 +86,13 @@
     <Compile Include="admin\backend.aspx.designer.cs">
       <DependentUpon>backend.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\delete_user.aspx.cs">
+      <DependentUpon>delete_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete_user.aspx.designer.cs">
+      <DependentUpon>delete_user.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\delete_vehicle.aspx.cs">
       <DependentUpon>delete_vehicle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,6 +113,20 @@
     </Compile>
     <Compile Include="admin\sold_inventory.aspx.designer.cs">
       <DependentUpon>sold_inventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\update_user.aspx.cs">
+      <DependentUpon>update_user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\update_user.aspx.designer.cs">
+      <DependentUpon>update_user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\user_list.aspx.cs">
+      <DependentUpon>user_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\user_list.aspx.designer.cs">
+      <DependentUpon>user_list.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

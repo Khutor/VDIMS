@@ -20,11 +20,16 @@ namespace VDIMS.vehicle
             if (min == "")
                 min = "0";
 
-            //Needs to be tweaked
-            if (make.Text == "" && model.Text == "" && year.Text == "" && color.Text == "" && condition.SelectedValue == "Any" && location.SelectedIndex == 0)
+            var cond = condition.SelectedValue;
+            if (cond.Equals("Any"))
+                cond = "Both";
+
+            String minT = minprice.Text;
+            String maxT = maxprice.Text;
+            if (make.Text == "" && model.Text == "" && year.Text == "" && color.Text == "" && cond.Equals("Both") && location.SelectedIndex == 0 && maxT.Equals("") && minT.Equals(""))
                 Response.Redirect("~/vehicle/results.aspx?all");
             else
-                Response.Redirect("~/vehicle/results.aspx?make=" + make.Text + "&model=" + model.Text + "&year=" + year.Text + "&color=" + color.Text + "&minPrice=" + min + "&maxprice=" + max + "&condition=" + condition.SelectedValue.ToString() + "&location=" + (1 + location.SelectedIndex));
+                Response.Redirect("~/vehicle/results.aspx?make=" + make.Text + "&model=" + model.Text + "&year=" + year.Text + "&color=" + color.Text + "&minPrice=" + min + "&maxprice=" + max + "&condition=" + cond + "&location=" + location.SelectedIndex);
         }
     }
 }

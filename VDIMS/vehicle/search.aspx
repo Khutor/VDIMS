@@ -17,7 +17,7 @@
                     <asp:TextBox id="color" class="form-control" placeholder="Color" runat="server"></asp:TextBox>
                 </div>
                 <div class="form-group col">
-                    <asp:TextBox id="year" class="form-control" placeholder="Year" runat="server"></asp:TextBox>
+                    <asp:TextBox id="year" class="form-control" type="number" placeholder="Year" runat="server"></asp:TextBox>
                 </div>
             </div>
             <div class="row">

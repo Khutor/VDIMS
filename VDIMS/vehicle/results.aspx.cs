@@ -13,48 +13,6 @@ namespace VDIMS.vehicle
     public partial class results : System.Web.UI.Page
     {
         private String cString = "ADD ME";
-
-        //public void do_params()
-        //{
-        //    Response.Write("<p>this is where the search params will be listed (csv style)</p>");
-        //}
-        //public void do_table()
-        //{
-        //    String make = Request.QueryString["make"];
-        //    String model = Request.QueryString["model"];
-        //    String year = Request.QueryString["year"];
-        //    String color = Request.QueryString["color"];
-        //    String minPrice = Request.QueryString["minPrice"];
-        //    String maxPrice = Request.QueryString["maxPrice"];
-        //    String condition = Request.QueryString["condition"];
-        //    String location = Request.QueryString["location"];
-
-        //    MySqlConnection conn = new MySqlConnection(cString);
-        //    conn.Open();
-        //    DataTable dt2 = new DataTable();
-        //    var sql = "";
-        //    if (Request.Url.AbsoluteUri.Contains("all"))
-        //        sql = "SELECT IMN, MAKE, MODEL, VEHICLE_YEAR, EXTERIOR_COLOR, VEHICLE_CONDITION, PRICE, DEALERSHIP_ID FROM VEHICLE";
-        //    else
-        //        sql = "SELECT IMN, MAKE, MODEL, YEAR, EXTERIOR_COLOR, CONDITION, PRICE, DEALERSHIP_ID FROM VEHICLE WHERE MAKE LIKE '" + make + "' AND MODEL LIKE '" + model + "' AND YEAR = " + year + " AND EXTERIOR_COLOR LIKE '" + color + "' AND PRICE > " + minPrice + " AND PRICE < " + maxPrice + " AND CONDITION = '" + condition + "' AND DEALERSHIP_ID = " + location;
-
-        //    MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
-        //    adapter.Fill(dt2);
-        //    MySqlDataReader reader;
-        //    MySqlCommand cmd = new MySqlCommand(sql, conn);
-        //    if (dt2.Rows.Count > 0)
-        //    {
-        //        reader = cmd.ExecuteReader();
-
-        //    }
-        //    else
-        //    {
-
-        //    }
-
-
-        //}
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -62,6 +20,7 @@ namespace VDIMS.vehicle
             {
                 this.BindRepeater();
             }
+            
        }
 
         private void BindRepeater()
@@ -76,12 +35,48 @@ namespace VDIMS.vehicle
                 String maxPrice = Request.QueryString["maxPrice"];
                 String condition = Request.QueryString["condition"];
                 String location = Request.QueryString["location"];
-                var sql = "";
-                if (Request.Url.AbsoluteUri.Contains("all"))
-                    sql = "SELECT IMN, MAKE, MODEL, PRICE FROM VEHICLE";
-                else
-                    sql = "SELECT IMN, MAKE, MODEL WHERE MAKE LIKE '" + make + "' AND MODEL LIKE '" + model + "' AND VEHICLE_YEAR = " + year + " AND EXTERIOR_COLOR LIKE '" + color + "' AND PRICE > " + minPrice + " AND PRICE < " + maxPrice + " AND VEHICLE_CONDITION = '" + condition + "' AND DEALERSHIP_ID = " + location;
 
+                var sql = "";
+                String condSql = "";
+                String locSql = "";
+                String priceSql = "(PRICE BETWEEN " + minPrice + " AND " + maxPrice + ")";
+                String yearSql = "";
+                if(!Request.Url.AbsoluteUri.Contains("all"))
+                {
+                    if (make.Equals(""))
+                        make = "%";
+                    if (model.Equals(""))
+                        model = "%";
+                    if (color.Equals(""))
+                        color = "%";
+
+                    if (year.Equals(""))
+                        yearSql = "VEHICLE_YEAR LIKE '%'";
+                    else
+                        yearSql = "VEHICLE_YEAR = " + year;
+
+                    if (condition.ToLower().Equals("both"))
+                        condSql = "VEHICLE_CONDITION LIKE '%'";
+                    else if (condition.ToLower().Equals("used"))
+                        condSql = "VEHICLE_CONDITION = 'New'";
+                    else
+                        condSql = "VEHICLE_CONDITION = 'Used'";
+
+                    if (location.Equals("0"))
+                        locSql = "DEALERSHIP_ID LIKE '%'";
+                    else if (location.Equals("1"))
+                        locSql = "DEALERSHIP_ID = 1";
+                    else if (location.Equals("2"))
+                        locSql = "DEALERSHIP_ID = 2";
+                    else
+                        locSql = "DEALERSHIP_ID = 3";
+
+                    sql = "SELECT IMN, MAKE, MODEL, PRICE FROM VEHICLE WHERE MAKE LIKE '" + make + "' AND MODEL LIKE '" + model + "' AND " + yearSql +  " AND EXTERIOR_COLOR LIKE '" + color + "%' AND " + priceSql + " AND " + condSql + " AND " + locSql;
+                }
+                else
+                {
+                    sql = "SELECT IMN, MAKE, MODEL, PRICE FROM VEHICLE";
+                }
                 using (MySqlConnection con = new MySqlConnection(cString))
                 {
                     using (MySqlCommand cmd = new MySqlCommand(sql, con))
